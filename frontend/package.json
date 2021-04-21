@@ -19,16 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anitkumarsingh/mern-shop.git"
-  },
   "author": "Anit Kumar Singh",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anitkumarsingh/mern-shop/issues"
-  },
-  "homepage": "https://github.com/anitkumarsingh/mern-shop#readme",
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -1,7 +1,8 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Blocks/Header';
+import Footer from './components/Blocks/Footer';
 import {Container} from 'react-bootstrap';
-import './App.css';
+import Products from './components/Home/Products/Index';
+import './styles/App.css';
 
 const App = () =>{
   return (
@@ -9,7 +10,8 @@ const App = () =>{
     <Header/>
       <Container>
         <main className="main-header py-3">
-          <h1>Welocome to Mern-ProShop</h1>
+        <h1>Latest Products</h1>
+          <Products/>
         </main>
       </Container>
     <Footer/>
