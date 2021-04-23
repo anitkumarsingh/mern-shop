@@ -1,5 +1,8 @@
 const express = require('express');
 const products = require('./mocks/products');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 
@@ -26,5 +29,5 @@ app.get('/api/product/:id', (req, res, next) => {
 });
 
 app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`);
+	console.log(`Server is running in ${process.env.NODE_ENV} on port ${PORT}`);
 });
