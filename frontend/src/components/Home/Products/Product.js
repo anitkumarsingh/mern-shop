@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Image, Button } from 'react-bootstrap';
-import products from '../../../mocks/product';
+import axios from 'axios';
 import Rating from './Rating';
 
 const Product = ({ match }) => {
-    const product = products.find((p) => p._id === match.params.id);
+    const [product, setProduct] = useState([]);
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios.get(`/api/product/${match.params.id}`);
+            setProduct(data);
+        };
+        fetchProduct();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <>
             <div className="my-3">
