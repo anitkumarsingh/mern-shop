@@ -1,3 +1,11 @@
-.main-header{
-  height: 80vh;
+.main-header {
+    height: 80vh;
+}
+.list-group-item {
+    background-color: transparent;
+    color: black;
+}
+.list-group-item:hover {
+    background-color: transparent;
+    color: black;
 }
