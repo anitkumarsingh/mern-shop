@@ -1,9 +1,10 @@
 import express from 'express';
 import products from './mocks/products.js';
 import dotenv from 'dotenv';
+import connectDB from './config/index.js';
 
 dotenv.config();
-
+connectDB();
 const app = express();
 
 const PORT = process.env.PORT || 5000;
