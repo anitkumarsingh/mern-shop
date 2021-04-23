@@ -1,0 +1,24 @@
+{
+	"name": "mern-shop",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Mern shopping cart",
+	"main": "server.js",
+	"scripts": {
+		"start": "nodemon backend/server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/anitkumarsingh/mern-shop.git"
+	},
+	"author": "Anit Kumar Singh",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/anitkumarsingh/mern-shop/issues"
+	},
+	"homepage": "https://github.com/anitkumarsingh/mern-shop#readme",
+	"dependencies": {
+		"express": "^4.17.1",
+		"nodemon": "^2.0.7"
+	}
+}
