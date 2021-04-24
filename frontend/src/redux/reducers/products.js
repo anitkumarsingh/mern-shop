@@ -7,13 +7,21 @@ const initialState = {
 
 const productsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.FETCH_FAILED:
+        case actionTypes.IS_LOADING:
             return {
                 ...state,
-                fetchFailed: true
+                isLoading: true,
+                products: action.payload
             };
         case actionTypes.FETCH_SUCCESS:
-            return { ...state, products: action.payload };
+            return { ...state, products: action.payload, isLoading: false };
+        case actionTypes.HAS_ERROR:
+            return {
+                ...state,
+                fetchFailed: true,
+                isLoading: false,
+                error: action.payload
+            };
         default:
             return state;
     }
