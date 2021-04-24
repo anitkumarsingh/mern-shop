@@ -6,7 +6,7 @@ import { fetchProducts } from '../../../redux/actions/products';
 
 const Home = () => {
     const dispatch = useDispatch();
-    const storeData = useSelector((state) => state.ProductReducers);
+    const storeData = useSelector((state) => state.productsReducer);
     const { isLoading, error, products } = storeData;
 
     console.log('store', storeData);
