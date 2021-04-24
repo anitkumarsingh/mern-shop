@@ -7,18 +7,18 @@ import Header from '../components/Blocks/Header';
 import Footer from '../components/Blocks/Footer';
 
 const Main = () => {
-    return (
-        <>
-            <Header />
-            <Container>
-                <Switch>
-                    <Route path="/" component={Products} exact />
-                    <Route path="/product/:id" component={Product} />
-                </Switch>
-            </Container>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Container>
+        <Switch>
+          <Route path="/" component={Products} exact />
+          <Route path="/product/:id" component={Product} />
+        </Switch>
+      </Container>
+      <Footer />
+    </>
+  );
 };
 
 export default Main;
