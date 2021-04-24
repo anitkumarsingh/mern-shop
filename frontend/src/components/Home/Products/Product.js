@@ -15,7 +15,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Product = ({ history, match }) => {
   const dispatch = useDispatch();
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
 
   const { isLoading, error, product } = useSelector(
     (state) => state.productReducer
