@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import ProductsList from './Products';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../../redux/actions/products';
+import { fetchProducts } from '../../../../redux/actions/products';
+import Loader from '../../Components/Loader';
+import Message from '../../Components/Message';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,9 +20,11 @@ const Home = () => {
     <>
       <h1>Latest Products</h1>
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <h2>{error}</h2>
+        <Message variant="danger">
+          <h2>{error}</h2>
+        </Message>
       ) : (
         <Row>
           {products &&

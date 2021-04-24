@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import Products from '../components/Home/Products/Index';
-import Product from '../components/Home/Products/Product';
-import Cart from '../components/Home/Products/Cart';
+import Products from '../components/Home/Pages/Products/Index';
+import Product from '../components/Home/Pages/Products/Product';
+import Cart from '../components/Home/Pages/Cart/Cart';
 import Header from '../components/Blocks/Header';
 import Footer from '../components/Blocks/Footer';
 

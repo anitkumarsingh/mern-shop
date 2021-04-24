@@ -9,8 +9,8 @@ import {
   Button,
   Form
 } from 'react-bootstrap';
-import Rating from './Rating';
-import { fetchProduct } from '../../../redux/actions/products';
+import Rating from '../../Components/Rating';
+import { fetchProduct } from '../../../../redux/actions/products';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Product = ({ history, match }) => {
@@ -107,7 +107,7 @@ const Product = ({ history, match }) => {
                   </ListGroup.Item>
                 )}
                 <Button
-                  className="btn-dark"
+                  className="btn-dark btn-block"
                   disabled={product.countInStock === 0}
                   onClick={() => addToCartHandler()}
                 >
