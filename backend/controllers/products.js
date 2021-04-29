@@ -1,6 +1,9 @@
 import Products from '../models/products.js';
 import AsyncHandler from 'express-async-handler';
 
+//@desc  get all products
+//@route GET /api/products
+//@access Public
 const getProducts = AsyncHandler(async (req, res, next) => {
 	const products = await Products.find({});
 	if (products) {
@@ -10,6 +13,9 @@ const getProducts = AsyncHandler(async (req, res, next) => {
 	}
 });
 
+//@desc  get single products
+//@route GET /api/products/id
+//@access Public
 const getProduct = AsyncHandler(async (req, res, next) => {
 	const product = await Products.findById(req.params.id);
 	if (product) {
