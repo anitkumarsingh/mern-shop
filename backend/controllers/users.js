@@ -1,6 +1,7 @@
 import Users from '../models/users.js';
 import AsyncHandler from 'express-async-handler';
 import { generateToken } from '../utils/generateToken.js';
+import User from '../models/users.js';
 
 const authUser = AsyncHandler(async (req, res) => {
 	const { email, password } = req.body;
@@ -19,4 +20,20 @@ const authUser = AsyncHandler(async (req, res) => {
 	}
 });
 
-export { authUser };
+const getUserProfile = AsyncHandler(async (req, res) => {
+	const user = await User.findById(req.user._id);
+	if (user) {
+		res.status(200);
+		res.json({
+			_id: user._id,
+			name: user.name,
+			email: user.email,
+			isAdmin: user.isAdmin
+		});
+	} else {
+		res.status(404);
+		res.json('User not found');
+	}
+});
+
+export { authUser, getUserProfile };
