@@ -3,15 +3,17 @@ import {
 	authUser,
 	registerUser,
 	getUserProfile,
-	getUsers
+	getUsers,
+	getUserById,
+	updateUser
 } from '../controllers/users.js';
 import { auth, isAdmin } from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.route('/').post(registerUser);
+router.route('/').post(registerUser).get(auth, isAdmin, getUsers);
 router.route('/login').post(authUser);
 router.route('/profile').get(auth, getUserProfile);
-router.route('/admin').get(auth, isAdmin, getUsers);
+router.route('/:id').get(auth, isAdmin, getUserById).put(auth, updateUser);
 
 export default router;
