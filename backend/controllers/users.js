@@ -64,4 +64,15 @@ const getUserProfile = AsyncHandler(async (req, res) => {
 	}
 });
 
-export { authUser, registerUser, getUserProfile };
+const getUsers = AsyncHandler(async (req, res) => {
+	const user = await User.find({});
+	if (user) {
+		res.status(200);
+		res.json({ success: true, message: 'User fetch successfully', users: user });
+	} else {
+		res.status(401);
+		res.json({ message: 'Not Authorized', success: false });
+	}
+});
+
+export { authUser, registerUser, getUserProfile, getUsers };

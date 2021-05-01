@@ -8,7 +8,6 @@ const auth = asyncHandler(async (req, res, next) => {
 		try {
 			token = req.headers.authorization.split(' ')[1];
 			const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-			console.log('de', decodedToken);
 			req.user = await User.findById(decodedToken.id).select('-password');
 			next();
 		} catch (error) {
@@ -22,4 +21,12 @@ const auth = asyncHandler(async (req, res, next) => {
 		throw new Error('Not Authorized, Not token');
 	}
 });
-export { auth };
+
+const isAdmin = asyncHandler(async (req, res, next) => {
+	if (req.user && req.user.isAdmin) {
+		next();
+	} else {
+		res.status(401).json({ message: 'Not Authorized', success: false });
+	}
+});
+export { auth, isAdmin };

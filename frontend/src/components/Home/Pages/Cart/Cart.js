@@ -14,14 +14,14 @@ const Cart = ({ match, location, history }) => {
     if (productId) {
       dispatch(addItemsToCart(productId, qty));
     }
-  }, [match, qty]);
+  }, [match, dispatch, qty, productId]);
 
   const { cartItems } = useSelector((state) => state.cartReducers);
   console.log(cartItems);
 
   return (
     <Row>
-      <Col md={8}>
+      {/* <Col md={8}>
         {cartItems.length === 0 ? (
           <Message>
             <h3>
@@ -32,7 +32,8 @@ const Cart = ({ match, location, history }) => {
           <ListGroup.Item variant="flush">asasasasfasf</ListGroup.Item>
         )}
       </Col>
-      <Col md={4}></Col>
+      <Col md={4}></Col> */}
+      asasd
     </Row>
   );
 };
